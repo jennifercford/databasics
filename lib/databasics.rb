@@ -47,6 +47,7 @@ module Databasics
       orders.each do |order|
         item = Item.find(order.item_id)
         puts "You ordered #{order.quantity} #{item.title.pluralize}"
+      end
 # Better way use a .includes() association method:
 #   Order.includes(:items).where(user_id:user.id).each do |order\
 #   puts "You ordered #{order.quantity} #{order.item.title.pluralize}"
