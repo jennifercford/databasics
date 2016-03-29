@@ -1,4 +1,5 @@
 module Databasics
-  class Orders < ActiveRecord::Base
+  class Order < ActiveRecord::Base
+    #belong_to :item
   end
 end
