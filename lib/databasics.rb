@@ -56,11 +56,12 @@ module Databasics
 
     def new_order
       puts "What would you like to purchase?"
-      item = gets.chomp.to_s
+      choice = gets.chomp.to_s
       #prompt for item name match the id, ask for quantity
+      item = Item.find_by!(item_title: choice)
       puts "How many would you like"
       quantity = gets.chomp.to_i
-      new_order = Order.create_by (item_id: item.id, quantity: quantity)
+      new_order = Order.create_by(item_id: item.id, quantity: quantity)
       #place new order
       puts new_order
       #return message if item not found probably use find_by!
